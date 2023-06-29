@@ -21,7 +21,7 @@ void remove_trailing_newline(char *inputptr);
 void tokenize_arguments(char *inputptr, char **args);
 void find_executable_command(char **args);
 void handle_command_execution(char **args);
-void handle_shell();
+void handle_shell(void);
 
 
 #endif
