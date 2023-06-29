@@ -8,6 +8,5 @@
 int main(void)
 {
 	handle_shell();
-	return 0;
+	return (0);
 }
-
