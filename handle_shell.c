@@ -31,7 +31,12 @@ void handle_shell(void)
 		tokenize_arguments(inputptr, args);
 		if (strcmp(args[0], "exit") == 0)
 		{
-			break;
+			for (a = 0; args[a] != NULL; a++)
+			{
+				free(args[a]);
+			}
+			free(inputptr);
+			exit(0);
 		}
 		else if (strcmp(args[0], "env") == 0)
 		{
