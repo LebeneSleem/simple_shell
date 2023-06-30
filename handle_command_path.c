@@ -7,7 +7,7 @@
 
 void handle_command_path(char **args)
 {
-	char *path, *token, *path_copy, user_command;
+	char *path, *token, *path_copy, command[Max_Arguments];
 
 	if (args[0][0] != '/')
 	{
@@ -18,14 +18,13 @@ void handle_command_path(char **args)
 			token = strtok(path_copy, ":");
 			while (token != NULL)
 			{
-				command[Max_Command];
-				snprintf(user_command, sizeof(user_command), "%s/%s", token, args[0])
-					if (access(user_command, X_OK) == 0)
+				snprintf(command, sizeof(command), "%s/%s", token, args[0]);
+					if (access(command, X_OK) == 0)
 					{
 						free(args[0]);  /*frees original value*/
-						args[0] = strdup(user_command);
+						args[0] = _strdup(command);
 						free(path_copy);
-						returrn;
+						return;
 					}
 				token = strtok(NULL, ":");
 			}
