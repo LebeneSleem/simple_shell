@@ -48,7 +48,7 @@ char *string_cpy(char *dest, char *src)
  * if s1 > s2, the positive difference
  * if s1 == s2, 0
  */
-int string_cmp(char *s1, char *s2)
+int string_cmp(const char *s1, const char *s2)
 {
 	if (s1 == NULL || s2 == NULL)
 	{

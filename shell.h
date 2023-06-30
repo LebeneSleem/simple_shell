@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 #include <stddef.h>
 
-extern char **environment;
+extern char **environ;
 
 #define BUFFER_SIZE 1024
 #define Max_Arguments 1000
@@ -22,7 +22,11 @@ void tokenize_arguments(char *inputptr, char **args);
 void handle_command_path(char **args);
 void handle_command_execution(char **args);
 void handle_shell(void);
+ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream);
+void handle_shell_exit(char *arg);
 
 /**customs functions*/
 char *_strdup(char *str);
+int _atoi(char *s);
+
 #endif
